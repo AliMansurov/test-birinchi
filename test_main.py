@@ -15,6 +15,9 @@ class ArithmeticTests(unittest.TestCase):
     def test_subtract(self):
         self.assertEqual(subtract(7, 4), 3)
 
+    def test_subtract_negative_result(self):
+        self.assertEqual(subtract(4, 7), -3)
+
     def test_multiply(self):
         self.assertEqual(multiply(-2, 3), -6)
 
