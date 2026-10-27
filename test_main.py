@@ -9,6 +9,9 @@ class ArithmeticTests(unittest.TestCase):
     def test_add(self):
         self.assertEqual(add(2, 3), 5)
 
+    def test_add_negative_and_float(self):
+        self.assertEqual(add(-1.5, 4), 2.5)
+
     def test_subtract(self):
         self.assertEqual(subtract(7, 4), 3)
 
