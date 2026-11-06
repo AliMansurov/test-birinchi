@@ -12,7 +12,7 @@ The demo accepts two numbers and prints their sum, difference, product, and quot
 
 ## Run the tests
 
-The project uses Python's built-in `unittest`; no third-party packages are required.
+The project uses Python's built-in `unittest`; no third-party packages are required. The tests live in `test_main.py` and cover the add, subtract, multiply, and divide helpers, including the divide-by-zero error.
 
 ```bash
 python -m unittest -v
