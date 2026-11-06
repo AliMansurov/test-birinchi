@@ -28,6 +28,13 @@ def is_even(n: int) -> bool:
     return n % 2 == 0
 
 
+def list_max(values: list[float]) -> float:
+    """Return the largest value in a non-empty list; raise ValueError when the list is empty."""
+    if not values:
+        raise ValueError("Cannot take the maximum of an empty list.")
+    return max(values)
+
+
 if __name__ == "__main__":
     first = float(input("Enter the first number: "))
     second = float(input("Enter the second number: "))
