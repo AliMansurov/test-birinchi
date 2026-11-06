@@ -2,7 +2,7 @@
 
 import unittest
 
-from main import add, divide, is_even, multiply, subtract
+from main import add, divide, is_even, list_max, multiply, subtract
 
 
 class ArithmeticTests(unittest.TestCase):
@@ -40,6 +40,14 @@ class ArithmeticTests(unittest.TestCase):
         self.assertTrue(is_even(-6))
         self.assertFalse(is_even(7))
         self.assertFalse(is_even(-3))
+
+    def test_list_max(self):
+        self.assertEqual(list_max([3, 9, -2]), 9)
+        self.assertEqual(list_max([-5]), -5)
+
+    def test_list_max_empty_raises_value_error(self):
+        with self.assertRaisesRegex(ValueError, "empty list"):
+            list_max([])
 
 
 if __name__ == "__main__":
