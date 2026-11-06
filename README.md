@@ -18,7 +18,11 @@ The project uses Python's built-in `unittest`; no third-party packages are requi
 python -m unittest -v
 ```
 
-The arithmetic helpers (`add`, `subtract`, `multiply`, and `divide`) can also be imported from `main.py`. `divide` raises `ValueError` if its denominator is zero.
+The helpers can be imported from `main.py`:
+
+- `add`, `subtract`, `multiply`, and `divide` perform basic arithmetic. `divide` raises `ValueError` if its denominator is zero.
+- `is_even(n)` returns `True` when the integer `n` is divisible by 2.
+- `list_max(values)` returns the largest value in a non-empty list. It raises `ValueError` if the list is empty.
 
 ## Daily scripts
 
