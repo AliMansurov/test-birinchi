@@ -2,7 +2,7 @@
 
 import unittest
 
-from main import add, divide, multiply, subtract
+from main import add, divide, is_even, multiply, subtract
 
 
 class ArithmeticTests(unittest.TestCase):
@@ -33,6 +33,13 @@ class ArithmeticTests(unittest.TestCase):
     def test_divide_by_zero_raises_value_error(self):
         with self.assertRaisesRegex(ValueError, "Cannot divide by zero"):
             divide(1, 0)
+
+    def test_is_even(self):
+        self.assertTrue(is_even(4))
+        self.assertTrue(is_even(0))
+        self.assertTrue(is_even(-6))
+        self.assertFalse(is_even(7))
+        self.assertFalse(is_even(-3))
 
 
 if __name__ == "__main__":
