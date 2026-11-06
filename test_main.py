@@ -24,6 +24,12 @@ class ArithmeticTests(unittest.TestCase):
     def test_divide(self):
         self.assertEqual(divide(7, 2), 3.5)
 
+    def test_divide_zero_numerator(self):
+        self.assertEqual(divide(0, 5), 0)
+
+    def test_divide_negative_denominator(self):
+        self.assertEqual(divide(9, -3), -3)
+
     def test_divide_by_zero_raises_value_error(self):
         with self.assertRaisesRegex(ValueError, "Cannot divide by zero"):
             divide(1, 0)
