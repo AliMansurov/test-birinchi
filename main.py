@@ -23,6 +23,11 @@ def divide(a: float, b: float) -> float:
     return a / b
 
 
+def is_even(n: int) -> bool:
+    """Return True if the integer n is divisible by 2."""
+    return n % 2 == 0
+
+
 if __name__ == "__main__":
     first = float(input("Enter the first number: "))
     second = float(input("Enter the second number: "))
