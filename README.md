@@ -14,6 +14,8 @@ The demo accepts two numbers and prints their sum, difference, product, and quot
 
 The project uses Python's built-in `unittest`; no third-party packages are required. The tests live in `test_main.py` and cover the add, subtract, multiply, and divide helpers, including the divide-by-zero error.
 
+Run the tests from the repository root so that `test_main.py` can import `main.py`:
+
 ```bash
 python -m unittest -v
 ```
