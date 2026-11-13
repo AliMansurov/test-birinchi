@@ -38,6 +38,16 @@ def list_max(values: list[float]) -> float:
     return max(values)
 
 
+def list_min(values: list[float]) -> float:
+    """Return the smallest value in a non-empty list.
+
+    Raises ValueError when the list is empty.
+    """
+    if not values:
+        raise ValueError("Cannot take the minimum of an empty list.")
+    return min(values)
+
+
 if __name__ == "__main__":
     first = float(input("Enter the first number: "))
     second = float(input("Enter the second number: "))
