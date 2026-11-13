@@ -41,6 +41,10 @@ class ArithmeticTests(unittest.TestCase):
         self.assertFalse(is_even(7))
         self.assertFalse(is_even(-3))
 
+    def test_is_even_large_integers(self):
+        self.assertTrue(is_even(1000000))
+        self.assertFalse(is_even(1000001))
+
     def test_list_max(self):
         self.assertEqual(list_max([3, 9, -2]), 9)
         self.assertEqual(list_max([-5]), -5)
