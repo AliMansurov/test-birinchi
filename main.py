@@ -29,7 +29,10 @@ def is_even(n: int) -> bool:
 
 
 def list_max(values: list[float]) -> float:
-    """Return the largest value in a non-empty list; raise ValueError when the list is empty."""
+    """Return the largest value in a non-empty list.
+
+    Raises ValueError when the list is empty.
+    """
     if not values:
         raise ValueError("Cannot take the maximum of an empty list.")
     return max(values)
