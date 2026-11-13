@@ -45,6 +45,9 @@ class ArithmeticTests(unittest.TestCase):
         self.assertEqual(list_max([3, 9, -2]), 9)
         self.assertEqual(list_max([-5]), -5)
 
+    def test_list_max_with_duplicate_maximum(self):
+        self.assertEqual(list_max([4, 9, 9, 1]), 9)
+
     def test_list_max_empty_raises_value_error(self):
         with self.assertRaisesRegex(ValueError, "empty list"):
             list_max([])
