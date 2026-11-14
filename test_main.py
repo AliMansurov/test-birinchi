@@ -2,7 +2,7 @@
 
 import unittest
 
-from main import add, divide, is_even, list_max, multiply, subtract
+from main import add, divide, is_even, list_max, list_min, multiply, subtract
 
 
 class ArithmeticTests(unittest.TestCase):
@@ -55,6 +55,14 @@ class ArithmeticTests(unittest.TestCase):
     def test_list_max_empty_raises_value_error(self):
         with self.assertRaisesRegex(ValueError, "empty list"):
             list_max([])
+
+    def test_list_min(self):
+        self.assertEqual(list_min([3, 9, -2]), -2)
+        self.assertEqual(list_min([-5]), -5)
+
+    def test_list_min_empty_raises_value_error(self):
+        with self.assertRaisesRegex(ValueError, "empty list"):
+            list_min([])
 
 
 if __name__ == "__main__":
