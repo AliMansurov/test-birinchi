@@ -25,6 +25,7 @@ The helpers can be imported from `main.py`:
 - `add`, `subtract`, `multiply`, and `divide` perform basic arithmetic. `divide` raises `ValueError` if its denominator is zero.
 - `is_even(n)` returns `True` when the integer `n` is divisible by 2.
 - `list_max(values)` returns the largest value in a non-empty list. It raises `ValueError` if the list is empty.
+- `list_min(values)` returns the smallest value in a non-empty list. It raises `ValueError` if the list is empty.
 
 ## Daily scripts
 
