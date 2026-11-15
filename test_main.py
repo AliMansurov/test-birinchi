@@ -21,6 +21,9 @@ class ArithmeticTests(unittest.TestCase):
     def test_multiply(self):
         self.assertEqual(multiply(-2, 3), -6)
 
+    def test_multiply_by_zero(self):
+        self.assertEqual(multiply(0, 42), 0)
+
     def test_divide(self):
         self.assertEqual(divide(7, 2), 3.5)
 
