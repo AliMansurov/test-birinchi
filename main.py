@@ -2,7 +2,7 @@
 
 
 def add(a: float, b: float) -> float:
-    """Return the sum of two numbers."""
+    """Return the sum of two numbers (integers or floats)."""
     return a + b
 
 
