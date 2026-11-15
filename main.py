@@ -7,7 +7,7 @@ def add(a: float, b: float) -> float:
 
 
 def subtract(a: float, b: float) -> float:
-    """Return the difference of two numbers."""
+    """Return a minus b (the first argument minus the second)."""
     return a - b
 
 
