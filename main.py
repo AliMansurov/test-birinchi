@@ -24,7 +24,7 @@ def divide(a: float, b: float) -> float:
 
 
 def is_even(n: int) -> bool:
-    """Return True if the integer n is divisible by 2."""
+    """Return True if the integer n is divisible by 2, including negative integers."""
     return n % 2 == 0
 
 
