@@ -69,6 +69,9 @@ class ArithmeticTests(unittest.TestCase):
     def test_list_min_with_duplicate_minimum(self):
         self.assertEqual(list_min([4, 1, 1, 9]), 1)
 
+    def test_list_min_all_positive(self):
+        self.assertEqual(list_min([8, 2, 5]), 2)
+
     def test_list_min_empty_raises_value_error(self):
         with self.assertRaisesRegex(ValueError, "empty list"):
             list_min([])
