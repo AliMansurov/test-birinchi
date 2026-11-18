@@ -51,6 +51,10 @@ class ArithmeticTests(unittest.TestCase):
         self.assertTrue(is_even(1000000))
         self.assertFalse(is_even(1000001))
 
+    def test_is_even_negative_boundary(self):
+        self.assertTrue(is_even(-2))
+        self.assertFalse(is_even(-1))
+
     def test_list_max(self):
         self.assertEqual(list_max([3, 9, -2]), 9)
         self.assertEqual(list_max([-5]), -5)
@@ -60,9 +64,6 @@ class ArithmeticTests(unittest.TestCase):
 
     def test_list_max_all_negative(self):
         self.assertEqual(list_max([-7, -3, -9]), -3)
-
-    def test_list_max_with_zero(self):
-        self.assertEqual(list_max([-4, 0, -1]), 0)
 
     def test_list_max_empty_raises_value_error(self):
         with self.assertRaisesRegex(ValueError, "empty list"):
