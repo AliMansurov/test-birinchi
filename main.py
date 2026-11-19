@@ -31,6 +31,8 @@ def is_even(n: int) -> bool:
 def list_max(values: list[float]) -> float:
     """Return the largest value in a non-empty list.
 
+    If several values are equal to the maximum, the value itself is returned,
+    so the result is the same regardless of which copy is picked.
     Raises ValueError when the list is empty.
     """
     if not values:
