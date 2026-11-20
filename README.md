@@ -22,7 +22,7 @@ python -m unittest -v
 
 The helpers can be imported from `main.py`:
 
-- `add`, `subtract`, `multiply`, and `divide` perform basic arithmetic. `divide` raises `ValueError` if its denominator is zero. `multiply` returns `0` when either operand is `0`, whether it is the first or the second.
+- `add`, `subtract`, `multiply`, and `divide` perform basic arithmetic. `divide` raises `ValueError` if its denominator is zero. `multiply` returns `0` when either operand is `0`, whether it is the first or the second. Two negative operands give a positive product, so `multiply(-4, -5)` returns `20`.
 - `is_even(n)` returns `True` when the integer `n` is divisible by 2. This includes negative integers, such as `-6`.
 - `list_max(values)` returns the largest value in a non-empty list. It raises `ValueError` if the list is empty. Zero is handled like any other value, so `list_max([-4, 0, -1])` returns `0`.
 - `list_min(values)` returns the smallest value in a non-empty list. It raises `ValueError` if the list is empty. Zero is handled like any other value, so `list_min([4, 0, 7])` returns `0`.
