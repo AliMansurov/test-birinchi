@@ -43,6 +43,7 @@ def list_max(values: list[float]) -> float:
 def list_min(values: list[float]) -> float:
     """Return the smallest value in a non-empty list.
 
+    The result is one of the values in the list.
     Raises ValueError when the list is empty.
     """
     if not values:
