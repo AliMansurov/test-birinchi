@@ -51,6 +51,16 @@ def list_min(values: list[float]) -> float:
     return min(values)
 
 
+def list_avg(values: list[float]) -> float:
+    """Return the arithmetic mean of a non-empty list as a float.
+
+    Raises ValueError when the list is empty.
+    """
+    if not values:
+        raise ValueError("Cannot average an empty list.")
+    return sum(values) / len(values)
+
+
 if __name__ == "__main__":
     first = float(input("Enter the first number: "))
     second = float(input("Enter the second number: "))
