@@ -28,6 +28,21 @@ def is_even(n: int) -> bool:
     return n % 2 == 0
 
 
+def is_prime(n: int) -> bool:
+    """Return True if the integer n is a prime number.
+
+    Numbers less than 2 (including negatives, 0, and 1) are not prime.
+    """
+    if n < 2:
+        return False
+    divisor = 2
+    while divisor * divisor <= n:
+        if n % divisor == 0:
+            return False
+        divisor += 1
+    return True
+
+
 def list_max(values: list[float]) -> float:
     """Return the largest value in a non-empty list.
 
