@@ -2,7 +2,7 @@
 
 import unittest
 
-from main import add, divide, is_even, list_max, list_min, multiply, subtract
+from main import add, divide, is_even, list_avg, list_max, list_min, multiply, subtract
 
 
 class ArithmeticTests(unittest.TestCase):
@@ -94,6 +94,25 @@ class ArithmeticTests(unittest.TestCase):
     def test_list_min_empty_raises_value_error(self):
         with self.assertRaisesRegex(ValueError, "empty list"):
             list_min([])
+
+    def test_list_avg(self):
+        self.assertEqual(list_avg([2, 4, 6]), 4)
+
+    def test_list_avg_single_element(self):
+        self.assertEqual(list_avg([7]), 7)
+
+    def test_list_avg_returns_float_for_non_integer_mean(self):
+        self.assertEqual(list_avg([1, 2]), 1.5)
+
+    def test_list_avg_negative_values(self):
+        self.assertEqual(list_avg([-3, -1, -2]), -2)
+
+    def test_list_avg_mixed_signs_to_zero(self):
+        self.assertEqual(list_avg([-5, 0, 5]), 0)
+
+    def test_list_avg_empty_raises_value_error(self):
+        with self.assertRaisesRegex(ValueError, "empty list"):
+            list_avg([])
 
 
 if __name__ == "__main__":
