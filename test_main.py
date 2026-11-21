@@ -2,7 +2,7 @@
 
 import unittest
 
-from main import add, divide, is_even, list_avg, list_max, list_min, multiply, subtract
+from main import add, divide, is_even, is_prime, list_avg, list_max, list_min, multiply, subtract
 
 
 class ArithmeticTests(unittest.TestCase):
@@ -113,6 +113,29 @@ class ArithmeticTests(unittest.TestCase):
     def test_list_avg_empty_raises_value_error(self):
         with self.assertRaisesRegex(ValueError, "empty list"):
             list_avg([])
+
+    def test_is_prime_small_primes(self):
+        for n in (2, 3, 5, 7, 11, 13):
+            self.assertTrue(is_prime(n), n)
+
+    def test_is_prime_small_composites(self):
+        for n in (4, 6, 8, 9, 10, 15):
+            self.assertFalse(is_prime(n), n)
+
+    def test_is_prime_zero_and_one_are_not_prime(self):
+        self.assertFalse(is_prime(0))
+        self.assertFalse(is_prime(1))
+
+    def test_is_prime_negative_numbers_are_not_prime(self):
+        self.assertFalse(is_prime(-7))
+        self.assertFalse(is_prime(-2))
+
+    def test_is_prime_square_of_prime_is_not_prime(self):
+        self.assertFalse(is_prime(49))
+        self.assertFalse(is_prime(121))
+
+    def test_is_prime_larger_prime(self):
+        self.assertTrue(is_prime(97))
 
 
 if __name__ == "__main__":
