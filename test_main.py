@@ -2,7 +2,7 @@
 
 import unittest
 
-from main import add, divide, is_even, is_prime, list_avg, list_max, list_min, multiply, subtract
+from main import add, divide, gcd, is_even, is_prime, list_avg, list_max, list_min, multiply, subtract
 
 
 class ArithmeticTests(unittest.TestCase):
@@ -136,6 +136,26 @@ class ArithmeticTests(unittest.TestCase):
 
     def test_is_prime_larger_prime(self):
         self.assertTrue(is_prime(97))
+
+    def test_gcd_basic(self):
+        self.assertEqual(gcd(12, 18), 6)
+
+    def test_gcd_coprime_is_one(self):
+        self.assertEqual(gcd(35, 64), 1)
+
+    def test_gcd_with_zero(self):
+        self.assertEqual(gcd(0, 9), 9)
+        self.assertEqual(gcd(9, 0), 9)
+
+    def test_gcd_both_zero(self):
+        self.assertEqual(gcd(0, 0), 0)
+
+    def test_gcd_negative_inputs_return_non_negative(self):
+        self.assertEqual(gcd(-12, 18), 6)
+        self.assertEqual(gcd(-12, -18), 6)
+
+    def test_gcd_is_symmetric(self):
+        self.assertEqual(gcd(54, 24), gcd(24, 54))
 
 
 if __name__ == "__main__":
