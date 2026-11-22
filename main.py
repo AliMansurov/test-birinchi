@@ -43,6 +43,17 @@ def is_prime(n: int) -> bool:
     return True
 
 
+def gcd(a: int, b: int) -> int:
+    """Return the greatest common divisor of two integers, always non-negative.
+
+    gcd(0, 0) returns 0. Negative inputs are treated by their absolute values.
+    """
+    a, b = abs(a), abs(b)
+    while b:
+        a, b = b, a % b
+    return a
+
+
 def list_max(values: list[float]) -> float:
     """Return the largest value in a non-empty list.
 
