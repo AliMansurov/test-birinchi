@@ -54,6 +54,17 @@ def gcd(a: int, b: int) -> int:
     return a
 
 
+def lcm(a: int, b: int) -> int:
+    """Return the least common multiple of two integers, always non-negative.
+
+    If either input is 0, the result is 0. Negative inputs are treated by their
+    absolute values.
+    """
+    if a == 0 or b == 0:
+        return 0
+    return abs(a * b) // gcd(a, b)
+
+
 def list_max(values: list[float]) -> float:
     """Return the largest value in a non-empty list.
 
