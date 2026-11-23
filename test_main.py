@@ -2,7 +2,7 @@
 
 import unittest
 
-from main import add, divide, gcd, is_even, is_prime, list_avg, list_max, list_min, multiply, subtract
+from main import add, divide, gcd, is_even, is_prime, lcm, list_avg, list_max, list_min, multiply, subtract
 
 
 class ArithmeticTests(unittest.TestCase):
@@ -156,6 +156,30 @@ class ArithmeticTests(unittest.TestCase):
 
     def test_gcd_is_symmetric(self):
         self.assertEqual(gcd(54, 24), gcd(24, 54))
+
+    def test_lcm_basic(self):
+        self.assertEqual(lcm(4, 6), 12)
+
+    def test_lcm_coprime_is_product(self):
+        self.assertEqual(lcm(5, 7), 35)
+
+    def test_lcm_equal_inputs(self):
+        self.assertEqual(lcm(9, 9), 9)
+
+    def test_lcm_one_divides_other(self):
+        self.assertEqual(lcm(3, 12), 12)
+
+    def test_lcm_with_zero_is_zero(self):
+        self.assertEqual(lcm(0, 8), 0)
+        self.assertEqual(lcm(8, 0), 0)
+        self.assertEqual(lcm(0, 0), 0)
+
+    def test_lcm_negative_inputs_return_non_negative(self):
+        self.assertEqual(lcm(-4, 6), 12)
+        self.assertEqual(lcm(-4, -6), 12)
+
+    def test_lcm_is_symmetric(self):
+        self.assertEqual(lcm(21, 6), lcm(6, 21))
 
 
 if __name__ == "__main__":
