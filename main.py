@@ -76,6 +76,19 @@ def clamp(value: float, low: float, high: float) -> float:
     return max(low, min(value, high))
 
 
+def factorial(n: int) -> int:
+    """Return n! for a non-negative integer n, with factorial(0) equal to 1.
+
+    Raises ValueError when n is negative.
+    """
+    if n < 0:
+        raise ValueError("Factorial is only defined for non-negative integers.")
+    result = 1
+    for factor in range(2, n + 1):
+        result *= factor
+    return result
+
+
 def list_max(values: list[float]) -> float:
     """Return the largest value in a non-empty list.
 
