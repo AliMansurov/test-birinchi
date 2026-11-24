@@ -2,7 +2,7 @@
 
 import unittest
 
-from main import add, divide, gcd, is_even, is_prime, lcm, list_avg, list_max, list_min, multiply, subtract
+from main import add, clamp, divide, gcd, is_even, is_prime, lcm, list_avg, list_max, list_min, multiply, subtract
 
 
 class ArithmeticTests(unittest.TestCase):
@@ -180,6 +180,33 @@ class ArithmeticTests(unittest.TestCase):
 
     def test_lcm_is_symmetric(self):
         self.assertEqual(lcm(21, 6), lcm(6, 21))
+
+    def test_clamp_value_inside_range(self):
+        self.assertEqual(clamp(5, 0, 10), 5)
+
+    def test_clamp_value_below_low(self):
+        self.assertEqual(clamp(-3, 0, 10), 0)
+
+    def test_clamp_value_above_high(self):
+        self.assertEqual(clamp(42, 0, 10), 10)
+
+    def test_clamp_value_on_boundaries(self):
+        self.assertEqual(clamp(0, 0, 10), 0)
+        self.assertEqual(clamp(10, 0, 10), 10)
+
+    def test_clamp_equal_bounds(self):
+        self.assertEqual(clamp(7, 4, 4), 4)
+
+    def test_clamp_negative_range(self):
+        self.assertEqual(clamp(-20, -10, -5), -10)
+        self.assertEqual(clamp(-1, -10, -5), -5)
+
+    def test_clamp_float_value(self):
+        self.assertEqual(clamp(2.5, 0.0, 1.0), 1.0)
+
+    def test_clamp_low_greater_than_high_raises_value_error(self):
+        with self.assertRaisesRegex(ValueError, "Lower bound"):
+            clamp(5, 10, 0)
 
 
 if __name__ == "__main__":
