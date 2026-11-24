@@ -2,7 +2,7 @@
 
 import unittest
 
-from main import add, clamp, divide, gcd, is_even, is_prime, lcm, list_avg, list_max, list_min, multiply, subtract
+from main import add, clamp, divide, factorial, gcd, is_even, is_prime, lcm, list_avg, list_max, list_min, multiply, subtract
 
 
 class ArithmeticTests(unittest.TestCase):
@@ -207,6 +207,21 @@ class ArithmeticTests(unittest.TestCase):
     def test_clamp_low_greater_than_high_raises_value_error(self):
         with self.assertRaisesRegex(ValueError, "Lower bound"):
             clamp(5, 10, 0)
+
+    def test_factorial_zero_and_one(self):
+        self.assertEqual(factorial(0), 1)
+        self.assertEqual(factorial(1), 1)
+
+    def test_factorial_small_values(self):
+        self.assertEqual(factorial(5), 120)
+        self.assertEqual(factorial(10), 3628800)
+
+    def test_factorial_large_value_is_exact(self):
+        self.assertEqual(factorial(20), 2432902008176640000)
+
+    def test_factorial_negative_raises_value_error(self):
+        with self.assertRaisesRegex(ValueError, "non-negative"):
+            factorial(-1)
 
 
 if __name__ == "__main__":
