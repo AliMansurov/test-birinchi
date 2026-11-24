@@ -65,6 +65,17 @@ def lcm(a: int, b: int) -> int:
     return abs(a * b) // gcd(a, b)
 
 
+def clamp(value: float, low: float, high: float) -> float:
+    """Return value limited to the inclusive range [low, high].
+
+    Values below low return low, and values above high return high.
+    Raises ValueError when low is greater than high.
+    """
+    if low > high:
+        raise ValueError("Lower bound must not be greater than upper bound.")
+    return max(low, min(value, high))
+
+
 def list_max(values: list[float]) -> float:
     """Return the largest value in a non-empty list.
 
