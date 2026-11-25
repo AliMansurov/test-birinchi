@@ -2,7 +2,7 @@
 
 import unittest
 
-from main import add, clamp, divide, factorial, gcd, is_even, is_prime, lcm, list_avg, list_max, list_min, multiply, subtract
+from main import add, clamp, digit_sum, divide, factorial, gcd, is_even, is_prime, lcm, list_avg, list_max, list_min, multiply, subtract
 
 
 class ArithmeticTests(unittest.TestCase):
@@ -222,6 +222,18 @@ class ArithmeticTests(unittest.TestCase):
     def test_factorial_negative_raises_value_error(self):
         with self.assertRaisesRegex(ValueError, "non-negative"):
             factorial(-1)
+
+    def test_digit_sum_zero(self):
+        self.assertEqual(digit_sum(0), 0)
+
+    def test_digit_sum_multi_digit(self):
+        self.assertEqual(digit_sum(12345), 15)
+
+    def test_digit_sum_ignores_sign(self):
+        self.assertEqual(digit_sum(-907), 16)
+
+    def test_digit_sum_single_digit(self):
+        self.assertEqual(digit_sum(7), 7)
 
 
 if __name__ == "__main__":
