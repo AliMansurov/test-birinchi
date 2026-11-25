@@ -1,5 +1,7 @@
 """Basic arithmetic utilities with a small interactive demo."""
 
+from math import isqrt
+
 
 def add(a: float, b: float) -> float:
     """Return the sum of two numbers (integers or floats)."""
@@ -41,6 +43,17 @@ def is_prime(n: int) -> bool:
             return False
         divisor += 1
     return True
+
+
+def is_perfect_square(n: int) -> bool:
+    """Return True if the integer n is the square of an integer.
+
+    Zero counts as a perfect square. Negative integers are never perfect squares.
+    """
+    if n < 0:
+        return False
+    root = isqrt(n)
+    return root * root == n
 
 
 def gcd(a: int, b: int) -> int:
