@@ -89,6 +89,14 @@ def factorial(n: int) -> int:
     return result
 
 
+def digit_sum(n: int) -> int:
+    """Return the sum of the decimal digits of n, ignoring its sign.
+
+    digit_sum(0) returns 0.
+    """
+    return sum(int(digit) for digit in str(abs(n)))
+
+
 def list_max(values: list[float]) -> float:
     """Return the largest value in a non-empty list.
 
