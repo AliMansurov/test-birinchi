@@ -2,7 +2,7 @@
 
 import unittest
 
-from main import add, clamp, digit_sum, divide, factorial, gcd, is_even, is_perfect_square, is_prime, lcm, list_avg, list_max, list_min, multiply, sign, subtract
+from main import add, clamp, digit_sum, divide, factorial, gcd, is_even, is_palindrome, is_perfect_square, is_prime, lcm, list_avg, list_max, list_min, multiply, sign, subtract
 
 
 class ArithmeticTests(unittest.TestCase):
@@ -263,6 +263,21 @@ class ArithmeticTests(unittest.TestCase):
     def test_sign_float_values(self):
         self.assertEqual(sign(0.001), 1)
         self.assertEqual(sign(-2.5), -1)
+
+    def test_is_palindrome_single_digits_and_zero(self):
+        self.assertTrue(is_palindrome(0))
+        self.assertTrue(is_palindrome(7))
+
+    def test_is_palindrome_true_for_palindromic_numbers(self):
+        self.assertTrue(is_palindrome(121))
+        self.assertTrue(is_palindrome(12321))
+
+    def test_is_palindrome_false_for_non_palindromes(self):
+        self.assertFalse(is_palindrome(123))
+        self.assertFalse(is_palindrome(120))
+
+    def test_is_palindrome_negative_is_false(self):
+        self.assertFalse(is_palindrome(-121))
 
 
 if __name__ == "__main__":
