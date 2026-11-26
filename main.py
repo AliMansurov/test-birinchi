@@ -110,6 +110,15 @@ def digit_sum(n: int) -> int:
     return sum(int(digit) for digit in str(abs(n)))
 
 
+def sign(n: float) -> int:
+    """Return -1 if n is negative, 1 if n is positive, and 0 if n is zero."""
+    if n > 0:
+        return 1
+    if n < 0:
+        return -1
+    return 0
+
+
 def list_max(values: list[float]) -> float:
     """Return the largest value in a non-empty list.
 
