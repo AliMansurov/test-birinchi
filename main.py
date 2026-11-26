@@ -56,6 +56,18 @@ def is_perfect_square(n: int) -> bool:
     return root * root == n
 
 
+def is_palindrome(n: int) -> bool:
+    """Return True if the decimal digits of the integer n read the same both ways.
+
+    Negative integers are never palindromes because of the leading minus sign,
+    so is_palindrome(-121) returns False.
+    """
+    if n < 0:
+        return False
+    text = str(n)
+    return text == text[::-1]
+
+
 def gcd(a: int, b: int) -> int:
     """Return the greatest common divisor of two integers, always non-negative.
 
