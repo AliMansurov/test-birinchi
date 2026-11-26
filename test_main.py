@@ -2,7 +2,7 @@
 
 import unittest
 
-from main import add, clamp, digit_sum, divide, factorial, gcd, is_even, is_perfect_square, is_prime, lcm, list_avg, list_max, list_min, multiply, subtract
+from main import add, clamp, digit_sum, divide, factorial, gcd, is_even, is_perfect_square, is_prime, lcm, list_avg, list_max, list_min, multiply, sign, subtract
 
 
 class ArithmeticTests(unittest.TestCase):
@@ -250,6 +250,19 @@ class ArithmeticTests(unittest.TestCase):
 
     def test_is_perfect_square_negative_is_false(self):
         self.assertFalse(is_perfect_square(-4))
+
+    def test_sign_positive(self):
+        self.assertEqual(sign(42), 1)
+
+    def test_sign_negative(self):
+        self.assertEqual(sign(-7), -1)
+
+    def test_sign_zero(self):
+        self.assertEqual(sign(0), 0)
+
+    def test_sign_float_values(self):
+        self.assertEqual(sign(0.001), 1)
+        self.assertEqual(sign(-2.5), -1)
 
 
 if __name__ == "__main__":
