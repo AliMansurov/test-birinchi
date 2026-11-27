@@ -2,7 +2,7 @@
 
 import unittest
 
-from main import add, clamp, digit_sum, divide, factorial, gcd, is_even, is_palindrome, is_perfect_square, is_power_of_two, is_prime, lcm, list_avg, list_max, list_min, multiply, sign, subtract
+from main import add, clamp, count_digits, digit_sum, divide, factorial, gcd, is_even, is_palindrome, is_perfect_square, is_power_of_two, is_prime, lcm, list_avg, list_max, list_min, multiply, sign, subtract
 
 
 class ArithmeticTests(unittest.TestCase):
@@ -292,6 +292,18 @@ class ArithmeticTests(unittest.TestCase):
 
     def test_is_power_of_two_negative_is_false(self):
         self.assertFalse(is_power_of_two(-4))
+
+    def test_count_digits_zero_has_one_digit(self):
+        self.assertEqual(count_digits(0), 1)
+
+    def test_count_digits_multi_digit(self):
+        self.assertEqual(count_digits(12345), 5)
+
+    def test_count_digits_ignores_sign(self):
+        self.assertEqual(count_digits(-907), 3)
+
+    def test_count_digits_single_digit(self):
+        self.assertEqual(count_digits(7), 1)
 
 
 if __name__ == "__main__":
