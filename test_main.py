@@ -2,7 +2,7 @@
 
 import unittest
 
-from main import add, clamp, digit_sum, divide, factorial, gcd, is_even, is_palindrome, is_perfect_square, is_prime, lcm, list_avg, list_max, list_min, multiply, sign, subtract
+from main import add, clamp, digit_sum, divide, factorial, gcd, is_even, is_palindrome, is_perfect_square, is_power_of_two, is_prime, lcm, list_avg, list_max, list_min, multiply, sign, subtract
 
 
 class ArithmeticTests(unittest.TestCase):
@@ -278,6 +278,20 @@ class ArithmeticTests(unittest.TestCase):
 
     def test_is_palindrome_negative_is_false(self):
         self.assertFalse(is_palindrome(-121))
+
+    def test_is_power_of_two_true_for_powers(self):
+        for n in (1, 2, 4, 8, 1024):
+            self.assertTrue(is_power_of_two(n), n)
+
+    def test_is_power_of_two_false_for_non_powers(self):
+        for n in (3, 6, 10, 1023):
+            self.assertFalse(is_power_of_two(n), n)
+
+    def test_is_power_of_two_zero_is_false(self):
+        self.assertFalse(is_power_of_two(0))
+
+    def test_is_power_of_two_negative_is_false(self):
+        self.assertFalse(is_power_of_two(-4))
 
 
 if __name__ == "__main__":
