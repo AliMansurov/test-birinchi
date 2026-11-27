@@ -68,6 +68,14 @@ def is_palindrome(n: int) -> bool:
     return text == text[::-1]
 
 
+def is_power_of_two(n: int) -> bool:
+    """Return True if the integer n is a positive power of two (1, 2, 4, 8, ...).
+
+    Zero and negative integers are not powers of two.
+    """
+    return n > 0 and n & (n - 1) == 0
+
+
 def gcd(a: int, b: int) -> int:
     """Return the greatest common divisor of two integers, always non-negative.
 
