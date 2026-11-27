@@ -130,6 +130,14 @@ def digit_sum(n: int) -> int:
     return sum(int(digit) for digit in str(abs(n)))
 
 
+def count_digits(n: int) -> int:
+    """Return the number of decimal digits in n, ignoring its sign.
+
+    count_digits(0) returns 1, since zero is written with one digit.
+    """
+    return len(str(abs(n)))
+
+
 def sign(n: float) -> int:
     """Return -1 if n is negative, 1 if n is positive, and 0 if n is zero."""
     if n > 0:
