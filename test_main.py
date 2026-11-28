@@ -2,7 +2,7 @@
 
 import unittest
 
-from main import add, clamp, count_digits, digit_sum, divide, factorial, gcd, is_even, is_palindrome, is_perfect_square, is_power_of_two, is_prime, lcm, list_avg, list_max, list_min, multiply, sign, subtract
+from main import add, clamp, count_digits, digit_sum, divide, factorial, gcd, is_even, is_palindrome, is_perfect_square, is_power_of_two, is_prime, lcm, list_avg, list_max, list_min, multiply, reverse_digits, sign, subtract
 
 
 class ArithmeticTests(unittest.TestCase):
@@ -304,6 +304,18 @@ class ArithmeticTests(unittest.TestCase):
 
     def test_count_digits_single_digit(self):
         self.assertEqual(count_digits(7), 1)
+
+    def test_reverse_digits_drops_trailing_zeros(self):
+        self.assertEqual(reverse_digits(120), 21)
+
+    def test_reverse_digits_keeps_negative_sign(self):
+        self.assertEqual(reverse_digits(-120), -21)
+
+    def test_reverse_digits_single_digit_is_unchanged(self):
+        self.assertEqual(reverse_digits(7), 7)
+
+    def test_reverse_digits_zero_is_zero(self):
+        self.assertEqual(reverse_digits(0), 0)
 
 
 if __name__ == "__main__":
