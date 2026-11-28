@@ -30,6 +30,14 @@ def is_even(n: int) -> bool:
     return n % 2 == 0
 
 
+def is_odd(n: int) -> bool:
+    """Return True if the integer n is not divisible by 2, including negative integers.
+
+    is_odd(-3) returns True, and is_odd(0) returns False.
+    """
+    return n % 2 != 0
+
+
 def is_prime(n: int) -> bool:
     """Return True if the integer n is a prime number.
 
