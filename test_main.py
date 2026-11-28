@@ -2,7 +2,7 @@
 
 import unittest
 
-from main import add, clamp, count_digits, digit_sum, divide, factorial, gcd, is_even, is_palindrome, is_perfect_square, is_power_of_two, is_prime, lcm, list_avg, list_max, list_min, multiply, reverse_digits, sign, subtract
+from main import add, clamp, count_digits, digit_sum, divide, factorial, gcd, is_even, is_odd, is_palindrome, is_perfect_square, is_power_of_two, is_prime, lcm, list_avg, list_max, list_min, multiply, reverse_digits, sign, subtract
 
 
 class ArithmeticTests(unittest.TestCase):
@@ -316,6 +316,19 @@ class ArithmeticTests(unittest.TestCase):
 
     def test_reverse_digits_zero_is_zero(self):
         self.assertEqual(reverse_digits(0), 0)
+
+    def test_is_odd_positive_and_negative(self):
+        self.assertTrue(is_odd(3))
+        self.assertTrue(is_odd(-3))
+        self.assertFalse(is_odd(4))
+        self.assertFalse(is_odd(-4))
+
+    def test_is_odd_zero_is_not_odd(self):
+        self.assertFalse(is_odd(0))
+
+    def test_is_odd_is_opposite_of_is_even(self):
+        for n in (-3, -2, -1, 0, 1, 2, 3):
+            self.assertEqual(is_odd(n), not is_even(n), n)
 
 
 if __name__ == "__main__":
