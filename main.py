@@ -138,6 +138,16 @@ def count_digits(n: int) -> int:
     return len(str(abs(n)))
 
 
+def reverse_digits(n: int) -> int:
+    """Return n with its decimal digits reversed, keeping the sign.
+
+    Trailing zeros disappear from the result, so reverse_digits(120) returns 21
+    and reverse_digits(-120) returns -21.
+    """
+    reversed_value = int(str(abs(n))[::-1])
+    return -reversed_value if n < 0 else reversed_value
+
+
 def sign(n: float) -> int:
     """Return -1 if n is negative, 1 if n is positive, and 0 if n is zero."""
     if n > 0:
