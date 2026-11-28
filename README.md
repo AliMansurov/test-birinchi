@@ -12,7 +12,7 @@ The demo accepts two numbers and prints their sum, difference, product, and quot
 
 ## Run the tests
 
-The project uses Python's built-in `unittest`; no third-party packages are required. The tests live in `test_main.py` and cover the add, subtract, multiply, and divide helpers, including the divide-by-zero error, as well as `is_even`, `list_max`, `list_min`, `list_avg`, `is_prime`, `is_perfect_square`, `gcd`, `lcm`, `clamp`, `factorial`, `digit_sum`, `sign`, `is_palindrome`, `is_power_of_two`, and `count_digits`.
+The project uses Python's built-in `unittest`; no third-party packages are required. The tests live in `test_main.py` and cover the add, subtract, multiply, and divide helpers, including the divide-by-zero error, as well as `is_even`, `is_odd`, `list_max`, `list_min`, `list_avg`, `is_prime`, `is_perfect_square`, `gcd`, `lcm`, `clamp`, `factorial`, `digit_sum`, `sign`, `is_palindrome`, `is_power_of_two`, `count_digits`, and `reverse_digits`.
 
 Run the tests from the repository root so that `test_main.py` can import `main.py`:
 
@@ -24,6 +24,7 @@ The helpers can be imported from `main.py`:
 
 - `add`, `subtract`, `multiply`, and `divide` perform basic arithmetic. `divide` raises `ValueError` if its denominator is zero. `multiply` returns `0` when either operand is `0`, whether it is the first or the second. Two negative operands give a positive product, so `multiply(-4, -5)` returns `20`.
 - `is_even(n)` returns `True` when the integer `n` is divisible by 2. This includes negative integers, such as `-6`.
+- `is_odd(n)` returns `True` when the integer `n` is not divisible by 2. This includes negative integers, so `is_odd(-3)` returns `True`. Zero is not odd, so `is_odd(0)` returns `False`.
 - `is_prime(n)` returns `True` when the integer `n` is a prime number. Numbers less than 2, including negatives, `0`, and `1`, return `False`. For example, `is_prime(97)` returns `True` and `is_prime(49)` returns `False`.
 - `is_perfect_square(n)` returns `True` when the integer `n` is the square of an integer. Zero counts as a perfect square, and negative integers always return `False`. For example, `is_perfect_square(144)` returns `True` and `is_perfect_square(145)` returns `False`.
 - `is_palindrome(n)` returns `True` when the decimal digits of the integer `n` read the same forwards and backwards. Negative integers always return `False`, so `is_palindrome(-121)` returns `False`. For example, `is_palindrome(12321)` returns `True` and `is_palindrome(123)` returns `False`.
@@ -34,6 +35,7 @@ The helpers can be imported from `main.py`:
 - `factorial(n)` returns `n!` for a non-negative integer `n`, with `factorial(0)` equal to `1`. It raises `ValueError` if `n` is negative. For example, `factorial(5)` returns `120`.
 - `digit_sum(n)` returns the sum of the decimal digits of the integer `n`, ignoring its sign. For example, `digit_sum(-907)` returns `16`, and `digit_sum(0)` returns `0`.
 - `count_digits(n)` returns the number of decimal digits in the integer `n`, ignoring its sign. Zero counts as one digit. For example, `count_digits(-907)` returns `3`, and `count_digits(0)` returns `1`.
+- `reverse_digits(n)` returns `n` with its decimal digits reversed, keeping the sign. Trailing zeros disappear from the result, so `reverse_digits(120)` returns `21` and `reverse_digits(-120)` returns `-21`.
 - `sign(n)` returns `1` if `n` is positive, `-1` if `n` is negative, and `0` if `n` is zero. It works for floats as well as integers. For example, `sign(-2.5)` returns `-1`.
 - `list_max(values)` returns the largest value in a non-empty list. It raises `ValueError` if the list is empty. Zero is handled like any other value, so `list_max([-4, 0, -1])` returns `0`.
 - `list_min(values)` returns the smallest value in a non-empty list. It raises `ValueError` if the list is empty. Zero is handled like any other value, so `list_min([4, 0, 7])` returns `0`.
